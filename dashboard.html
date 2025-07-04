@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin – Upload & Manage Content</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #111; }
+    input, textarea, button, select { display: block; margin: 1rem 0; padding: 0.5rem; width: 100%; max-width: 500px; }
+    label { font-weight: bold; margin-top: 1.5rem; }
+    #content { display: none; }
+  </style>
+  <script>
+    function checkPassword() {
+      var pw = document.getElementById("pw").value;
+      if (pw === "2020") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        alert("Incorrect password.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="login">
+    <h2>Enter Password</h2>
+    <input type="password" id="pw" placeholder="Enter Password">
+    <button onclick="checkPassword()">Login</button>
+  </div>
+
+  <div id="content">
+    <h1>📚 Manuscript Miscreant Admin Panel</h1>
+
+    <label>Upload a New Book (PDF)</label>
+    <input type="file" accept=".pdf">
+    <label>Book Title</label>
+    <input type="text" placeholder="Enter book title">
+    <label>Book Description</label>
+    <textarea placeholder="Write a short description..."></textarea>
+    <label>Book Cover (JPG/PNG)</label>
+    <input type="file" accept="image/*">
+    <button>Upload Book</button>
+
+    <label>Change Homepage Music (Spotify or YouTube URL)</label>
+    <input type="url" placeholder="Paste playlist or video link">
+    <button>Update Music</button>
+
+    <label>Replace Homepage Video (YouTube Embed URL)</label>
+    <input type="url" placeholder="Paste video embed link">
+    <button>Update Video</button>
+
+    <label>View Sales & Email Submissions</label>
+    <a href="https://docs.google.com/spreadsheets" target="_blank">Open Google Sheet (placeholder)</a>
+  </div>
+</body>
+</html>
